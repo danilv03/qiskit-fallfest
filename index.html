@@ -9,6 +9,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         .schedule-day {
             transition: all 0.3s ease;
@@ -31,12 +32,33 @@
             height: 100%;
         }
         .hero-section {
-            height: 500px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 20;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        }
+        .timeline-img {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-img:hover {
+            transform: scale(1.05) rotate(2deg);
         }
         .speaker-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -45,109 +67,145 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .quantum-bg {
-            background: linear-gradient(135deg, #0f4c81 0%, #1cb5e0 100%);
-        }
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
         }
         .logo-img {
-            height: 60px;
+            height: 70px;
             width: auto;
             object-fit: contain;
+            filter: grayscale(100%) brightness(200%);
+            transition: all 0.3s ease;
+        }
+        .logo-img:hover {
+            filter: none;
+            transform: scale(1.1);
         }
         @media (max-width: 768px) {
             .logo-img {
-                height: 40px;
+                height: 50px;
             }
         }
         .register-btn {
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            box-shadow: 0 10px 20px rgba(238, 90, 36, 0.3);
         }
         .register-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 15px 30px rgba(238, 90, 36, 0.4);
+        }
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin-right: 15px;
+            flex-shrink: 0;
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="min-h-screen">
     <!-- Navbar -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="nav-glass shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <img src="UOS-LOGO-RGB.png" alt="University of Sharjah Logo" class="h-12">
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
-                    <a href="#schedule" class="text-gray-700 hover:text-blue-600">Schedule</a>
-                    <a href="#speakers" class="text-gray-700 hover:text-blue-600">Speakers</a>
-                    <a href="#venue" class="text-gray-700 hover:text-blue-600">Venue</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Register</a>
+                    <a href="#home" class="text-white hover:text-blue-200">Home</a>
+                    <a href="#about" class="text-white hover:text-blue-200">About</a>
+                    <a href="#schedule" class="text-white hover:text-blue-200">Schedule</a>
+                    <a href="#speakers" class="text-white hover:text-blue-200">Speakers</a>
+                    <a href="#venue" class="text-white hover:text-blue-200">Venue</a>
+                    <a href="#contact" class="text-white hover:text-blue-200">Contact</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-purple-700 px-4 py-2 rounded hover:bg-blue-50">Register</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-16">
-        <div class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Theme.png');">
-            <div class="text-center text-white p-6 rounded-lg">
-                <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2025</h1>
-                <p class="text-xl mb-8">University of Sharjah | October 1st - 4th, 2025</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="register-btn bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg inline-block">Register Now</a>
+    <section id="home" class="hero-section pt-16">
+        <div class="hero-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Qiskit Fall Fest 2025</h1>
+                    <p class="text-xl md:text-2xl mb-8">University of Sharjah<br>October 1st - 4th, 2025</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="register-btn text-white px-8 py-4 rounded-full font-semibold text-lg inline-block">Register Now</a>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <img src="Timeline_02.png" alt="Event Timeline 1" class="timeline-img">
+                    <img src="Timeline_03.png" alt="Event Timeline 2" class="timeline-img">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">About the Event</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <p class="text-lg text-gray-600 mb-6">Qiskit Fall Fest is the world's largest collection of student-run quantum computing events. As one of the 50 sponsored international universities selected to host it, we bring together a collection of talented quantum enthusiasts along with IBM Quantum members to mark a celebration of the advances that quantum computing has made in the past year.</p>
-                    <p class="text-lg text-gray-600 mb-6">With experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus, we welcome you to the event and are hoping to see you there!</p>
-                </div>
-                <div class="relative">
-                    <img src="Web_Community-Page_Image.png" alt="Quantum Community" class="rounded-lg shadow-lg transform hover:scale-105 transition duration-300 w-full">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">About the Event</h2>
+            <div class="content-card p-8 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-lg text-white mb-6">Qiskit Fall Fest is the world's largest collection of student-run quantum computing events. As one of the 50 sponsored international universities selected to host it, we bring together a collection of talented quantum enthusiasts along with IBM Quantum members to mark a celebration of the advances that quantum computing has made in the past year.</p>
+                        <p class="text-lg text-white mb-6">With experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus, we welcome you to the event and are hoping to see you there!</p>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="Badge_01.png" alt="Event Badge" class="rounded-lg shadow-lg w-full max-w-md">
+                    </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-                <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="content-card p-6">
                     <div class="flex items-center mb-4">
-                        <img src="Badge_01.png" alt="GDG Club Badge" class="h-16 w-16 mr-4">
-                        <h3 class="text-2xl font-semibold">GDG Club</h3>
+                        <img src="gdg_logo.JPG" alt="GDG Club Logo" class="h-16 w-16 mr-4 rounded-full">
+                        <h3 class="text-2xl font-semibold text-white">GDG Club</h3>
                     </div>
-                    <p class="text-gray-600">Introducing GDG Club, the pioneering Quantum Computing Special Team at University of Sharjah. GDG Club is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing.</p>
+                    <p class="text-white">Introducing GDG Club, the pioneering Quantum Computing Special Team at University of Sharjah. GDG Club is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="content-card p-6">
                     <div class="flex items-center mb-4">
-                        <img src="qiskit123.png" alt="IBM Qiskit Logo" class="h-16 w-16 mr-4">
-                        <h3 class="text-2xl font-semibold">IBM Qiskit</h3>
+                        <img src="qiskit_logo.svg" alt="IBM Qiskit Logo" class="h-16 w-16 mr-4">
+                        <h3 class="text-2xl font-semibold text-white">IBM Qiskit</h3>
                     </div>
-                    <p class="text-gray-600">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Join us to learn and experiment with this cutting-edge technology.</p>
+                    <p class="text-white">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Join us to learn and experiment with this cutting-edge technology.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Schedule Section -->
-    <section id="schedule" class="py-20 bg-gray-100">
+    <section id="schedule" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Schedule</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Schedule</h2>
             <div class="space-y-4">
-                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 1 - October 1, 2025</h3>
-                    <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
+                <div class="schedule-day content-card p-6 cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold text-white">Day 1 - October 1, 2025</h3>
+                    <p class="text-blue-100">Venue: Main Auditorium, University of Sharjah</p>
                     <div class="details hidden mt-4">
-                        <ul class="list-disc pl-5 text-gray-600">
+                        <ul class="list-disc pl-5 text-blue-100">
                             <li>09:00 AM - Opening Ceremony</li>
                             <li>10:00 AM - Introduction to Quantum Computing Workshop</li>
                             <li>01:00 PM - Lunch Break</li>
@@ -156,22 +214,22 @@
                         </ul>
                     </div>
                 </div>
-                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 2 - October 2, 2025</h3>
-                    <p class="text-gray-600">Venue: Online - MS Teams</p>
+                <div class="schedule-day content-card p-6 cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold text-white">Day 2 - October 2, 2025</h3>
+                    <p class="text-blue-100">Venue: Online - MS Teams</p>
                     <div class="details hidden mt-4">
-                        <ul class="list-disc pl-5 text-gray-600">
+                        <ul class="list-disc pl-5 text-blue-100">
                             <li>10:00 AM - Quantum Algorithms Webinar</li>
                             <li>12:00 PM - Virtual Q&A with IBM Quantum Experts</li>
                             <li>02:00 PM - Online Hackathon Kickoff</li>
                         </ul>
                     </div>
                 </div>
-                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 3 - October 3, 2025</h3>
-                    <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
+                <div class="schedule-day content-card p-6 cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold text-white">Day 3 - October 3, 2025</h3>
+                    <p class="text-blue-100">Venue: Main Auditorium, University of Sharjah</p>
                     <div class="details hidden mt-4">
-                        <ul class="list-disc pl-5 text-gray-600">
+                        <ul class="list-disc pl-5 text-blue-100">
                             <li>09:00 AM - Advanced Qiskit Workshop</li>
                             <li>11:00 AM - Guest Lecture by Pawel Gora</li>
                             <li>01:00 PM - Lunch Break</li>
@@ -179,11 +237,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 4 - October 4, 2025</h3>
-                    <p class="text-gray-600">Venue: Conference Hall, University of Sharjah</p>
+                <div class="schedule-day content-card p-6 cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold text-white">Day 4 - October 4, 2025</h3>
+                    <p class="text-blue-100">Venue: Conference Hall, University of Sharjah</p>
                     <div class="details hidden mt-4">
-                        <ul class="list-disc pl-5 text-gray-600">
+                        <ul class="list-disc pl-5 text-blue-100">
                             <li>09:00 AM - Hackathon Final Presentations</li>
                             <li>12:00 PM - Keynote by Alain Chancé</li>
                             <li>02:00 PM - Awards Ceremony</li>
@@ -196,85 +254,100 @@
     </section>
 
     <!-- Speakers Section -->
-    <section id="speakers" class="py-20 bg-white">
+    <section id="speakers" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Featured Speakers</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Featured Speakers</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="speaker-card bg-gray-50 p-6 rounded-lg text-center">
+                <div class="speaker-card content-card p-6 text-center">
                     <img src="Sticker_Fall-fest-badge_Black.png" alt="Pawel Gora" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
-                    <h3 class="text-xl font-semibold">Pawel Gora</h3>
-                    <p class="text-gray-600 mb-2">University of Warsaw</p>
-                    <p class="text-sm text-gray-500">Expert in quantum algorithms and their applications in machine learning</p>
+                    <h3 class="text-xl font-semibold text-white">Pawel Gora</h3>
+                    <p class="text-blue-100 mb-2">University of Warsaw</p>
+                    <p class="text-sm text-blue-200">Expert in quantum algorithms and their applications in machine learning</p>
                 </div>
-                <div class="speaker-card bg-gray-50 p-6 rounded-lg text-center">
+                <div class="speaker-card content-card p-6 text-center">
                     <img src="Sticker_Fall-fest-badge_Black.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
-                    <h3 class="text-xl font-semibold">Alain Chancé</h3>
-                    <p class="text-gray-600 mb-2">Founder CEO Alainquant LLC</p>
-                    <p class="text-sm text-gray-500">Quantum entrepreneur with extensive experience in quantum computing startups</p>
+                    <h3 class="text-xl font-semibold text-white">Alain Chancé</h3>
+                    <p class="text-blue-100 mb-2">Founder CEO Alainquant LLC</p>
+                    <p class="text-sm text-blue-200">Quantum entrepreneur with extensive experience in quantum computing startups</p>
                 </div>
-                <div class="speaker-card bg-gray-50 p-6 rounded-lg text-center">
+                <div class="speaker-card content-card p-6 text-center">
                     <img src="Sticker_Fall-fest-badge_Black.png" alt="L Venkata Subramaniam" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
-                    <h3 class="text-xl font-semibold">L Venkata Subramaniam</h3>
-                    <p class="text-gray-600 mb-2">IBM Quantum India Leader</p>
-                    <p class="text-sm text-gray-500">Leading IBM's quantum computing initiatives in India and surrounding regions</p>
+                    <h3 class="text-xl font-semibold text-white">L Venkata Subramaniam</h3>
+                    <p class="text-blue-100 mb-2">IBM Quantum India Leader</p>
+                    <p class="text-sm text-blue-200">Leading IBM's quantum computing initiatives in India and surrounding regions</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Partners Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Partners</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Our Partners</h2>
             <div class="logo-container">
                 <img src="UOS-LOGO-RGB.png" alt="University of Sharjah" class="logo-img">
-                <img src="qiskit123.png" alt="IBM Qiskit" class="logo-img">
-                <img src="Sticker_Fall-fest-badge_Black.png" alt="Qiskit Fall Fest" class="logo-img">
+                <img src="IBM Quantum Logo.png" alt="IBM Quantum" class="logo-img">
+                <img src="gdg_logo.JPG" alt="GDG Club" class="logo-img">
+                <img src="qiskit_logo.svg" alt="IBM Qiskit" class="logo-img">
             </div>
         </div>
     </section>
 
     <!-- Venue Section -->
-    <section id="venue" class="py-20 bg-white">
+    <section id="venue" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Venue</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Venue</h2>
             <div class="map-container rounded-lg shadow-lg mb-8">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.529054676188!2d55.48500631503664!3d25.28628738384862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b5f5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1696425600000!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="text-center">
-                <p class="text-lg text-gray-600">University of Sharjah<br>University City Rd<br>Sharjah, United Arab Emirates</p>
+                <p class="text-lg text-white">University of Sharjah<br>University City Rd<br>Sharjah, United Arab Emirates</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
+    <section id="contact" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Contact Us</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Student Coordinators</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-center">
-                            <span class="bg-blue-100 text-blue-800 p-2 rounded-full mr-3">K</span>
-                            Kirill: 9099906520
+                    <h3 class="text-xl font-semibold mb-4 text-white">Student Coordinators</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-white">
+                            <div class="icon-circle">
+                                <span class="text-white font-bold">K</span>
+                            </div>
+                            Kirill: <a href="mailto:U22100221@sharjah.ac.ae" class="ml-2 text-blue-200 hover:underline">U22100221@sharjah.ac.ae</a>
                         </li>
-                        <li class="flex items-center">
-                            <span class="bg-blue-100 text-blue-800 p-2 rounded-full mr-3">O</span>
-                            Omar: 6360910426
+                        <li class="flex items-center text-white">
+                            <div class="icon-circle">
+                                <span class="text-white font-bold">O</span>
+                            </div>
+                            Omar: <a href="mailto:U22100221@sharjah.ac.ae" class="ml-2 text-blue-200 hover:underline">U22100221@sharjah.ac.ae</a>
                         </li>
-                        <li class="flex items-center">
-                            <span class="bg-blue-100 text-blue-800 p-2 rounded-full mr-3">D</span>
-                            Danil: 6282382764
+                        <li class="flex items-center text-white">
+                            <div class="icon-circle">
+                                <span class="text-white font-bold">D</span>
+                            </div>
+                            Danil: <a href="mailto:U22100221@sharjah.ac.ae" class="ml-2 text-blue-200 hover:underline">U22100221@sharjah.ac.ae</a>
                         </li>
-                        <li class="flex items-center">
-                            <span class="bg-blue-100 text-blue-800 p-2 rounded-full mr-3">A</span>
-                            Ahmed: 9345459249
+                        <li class="flex items-center text-white">
+                            <div class="icon-circle">
+                                <span class="text-white font-bold">A</span>
+                            </div>
+                            Ahmed: <a href="mailto:U22100221@sharjah.ac.ae" class="ml-2 text-blue-200 hover:underline">U22100221@sharjah.ac.ae</a>
+                        </li>
+                        <li class="flex items-center text-white">
+                            <div class="icon-circle">
+                                <span class="text-white font-bold">A</span>
+                            </div>
+                            Ashraf: <a href="mailto:U22100221@sharjah.ac.ae" class="ml-2 text-blue-200 hover:underline">U22100221@sharjah.ac.ae</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Follow Us</h3>
                     <div class="flex space-x-4">
                         <a href="https://www.instagram.com/uos.gdg?utm_source=ig_web_button_share_sheet&igsh=MWt6enpqNnJuMnNlbA==" target="_blank" class="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-shadow">
                             <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
@@ -283,7 +356,7 @@
                         </a>
                         <a href="https://www.linkedin.com/in/google-developer-student-club-university-of-sharjah/" target="_blank" class="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-shadow">
                             <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 极速3.614 2.008 3.614 4.621v5.579z"/>
+                                <path d="M19 0h-14c-2.761 极速-5 2.239-5 5v14c0 2.761 2.239 5 5 5极速14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-极速s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 0 3.614 2.008 3.614 4.621v5.579z"/>
                             </svg>
                         </a>
                     </div>
@@ -293,7 +366,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>© 2025 GDG Club. All Rights Reserved.</p>
             <img src="Sticker_Fall-fest-badge_Black.png" alt="Qiskit Fall Fest Badge" class="mt-4 mx-auto w-20 h-20 object-cover">
