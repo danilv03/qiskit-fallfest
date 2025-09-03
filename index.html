@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Qiskit Fall Fest — Starter Clone</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (quick prototype) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-dark': '#0f1724',
+            'accent-pink': '#ff6fb5',
+            'accent-purple': '#8b5cf6'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    /* small utility for the hero background blob */
+    .blob { filter: drop-shadow(0 10px 30px rgba(0,0,0,0.45)); }
+  </style>
+</head>
+<body class="bg-bg-dark text-gray-100 leading-relaxed">
+
+  <!-- NAV -->
+  <header class="fixed w-full z-40 bg-gradient-to-b from-black/40 to-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a class="text-lg font-bold tracking-tight" href="#home">IBM Qiskit <span class="text-accent-pink">Fall Fest</span></a>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#partners" class="hover:underline">Partners</a>
+        <a href="#schedule" class="hover:underline">Schedule</a>
+        <a href="#speakers" class="hover:underline">Speakers</a>
+        <a href="#venue" class="hover:underline">Venue</a>
+        <a href="#team" class="hover:underline">Team</a>
+        <a href="https://vitchennaievents.com" target="_blank" class="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-accent-pink to-accent-purple text-black font-semibold">Register</a>
+      </nav>
+
+      <!-- mobile toggle -->
+      <button id="navToggle" class="md:hidden p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="md:hidden bg-bg-dark/95">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#about">About</a>
+        <a href="#partners">Partners</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#venue">Venue</a>
+        <a href="#team">Team</a>
+        <a href="https://vitchennaievents.com" target="_blank" class="inline-block mt-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent-pink to-accent-purple text-black font-semibold">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="pt-24">
+    <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="text-sm uppercase text-gray-400 mb-4">Event</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">IBM Qiskit<br/><span class="text-accent-pink">Fall Fest</span> 2024</h1>
+        <p class="mt-6 text-gray-300 max-w-xl">A student-run collection of workshops, hackathons and talks exploring quantum computing. Hosted by VIT Chennai in partnership with IBM Quantum.</p>
+
+        <div class="mt-8 flex gap-3">
+          <a href="#register" class="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-accent-pink to-accent-purple text-black font-semibold">Register</a>
+          <a href="#about" class="inline-block px-6 py-3 rounded-full border border-gray-700">Learn more</a>
+        </div>
+
+        <div class="mt-8 flex gap-4 items-center text-sm text-gray-400">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-accent-purple to-accent-pink flex items-center justify-center">Q</div>
+            <div>
+              <div class="font-semibold">October</div>
+              <div class="text-xs">1st - 4th</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <!-- decorative blob & stickers to imitate original site vibe -->
+        <svg class="blob w-full max-w-md" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#ff6fb5"/>
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" rx="24" fill="#0b1220" />
+          <g transform="translate(40,20)">
+            <circle cx="120" cy="80" r="50" fill="url(#g)" opacity="0.85" />
+            <rect x="220" y="200" width="140" height="90" rx="12" fill="#111827" stroke="#2b1f3a" />
+            <!-- add extra small stickers -->
+            <circle cx="420" cy="60" r="24" fill="#ffd6ea" />
+            <circle cx="360" cy="140" r="18" fill="#e9d5ff" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold">About the event</h2>
+      <p class="mt-4 text-gray-300 max-w-3xl">Qiskit Fall Fest is the world’s largest collection of student-run quantum computing events. As one of the selected universities, we host workshops, hackathons and guest talks to build quantum skills.</p>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="max-w-6xl mx-auto px-6 py-12">
+      <h3 class="text-xl font-semibold">Partners</h3>
+      <div class="mt-6 flex gap-6 flex-wrap items-center">
+        <!-- replace with real logos -->
+        <div class="w-36 h-16 bg-gray-800 rounded flex items-center justify-center">IBM</div>
+        <div class="w-36 h-16 bg-gray-800 rounded flex items-center justify-center">VIT</div>
+        <div class="w-36 h-16 bg-gray-800 rounded flex items-center justify-center">Quantumplators</div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="max-w-6xl mx-auto px-6 py-12">
+      <h3 class="text-xl font-semibold">Schedule</h3>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-gray-900 rounded">
+          <div class="font-semibold">DAY 1 — October 1, 2024</div>
+          <div class="text-gray-400 text-sm mt-2">Venue: AB1 Nethaji Auditorium</div>
+        </div>
+        <div class="p-6 bg-gray-900 rounded">
+          <div class="font-semibold">DAY 2 — October 2, 2024</div>
+          <div class="text-gray-400 text-sm mt-2">Venue: Online - MS Teams</div>
+        </div>
+        <div class="p-6 bg-gray-900 rounded">
+          <div class="font-semibold">DAY 3 — October 3, 2024</div>
+          <div class="text-gray-400 text-sm mt-2">Venue: AB1 Nethaji Auditorium</div>
+        </div>
+        <div class="p-6 bg-gray-900 rounded">
+          <div class="font-semibold">DAY 4 — October 4, 2024</div>
+          <div class="text-gray-400 text-sm mt-2">Venue: Kasturba Auditorium</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPEAKERS -->
+    <section id="speakers" class="max-w-6xl mx-auto px-6 py-12">
+      <h3 class="text-xl font-semibold">Speakers</h3>
+      <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- sample speaker cards; replace images/names -->
+        <div class="bg-gray-900 rounded p-4">
+          <img src="https://via.placeholder.com/300x300?text=Speaker+1" alt="speaker" class="w-full h-44 object-cover rounded" />
+          <div class="mt-3 font-semibold">Pawel Gora</div>
+          <div class="text-sm text-gray-400">University of Warsaw</div>
+        </div>
+        <div class="bg-gray-900 rounded p-4">
+          <img src="https://via.placeholder.com/300x300?text=Speaker+2" alt="speaker" class="w-full h-44 object-cover rounded" />
+          <div class="mt-3 font-semibold">Alain Chancé</div>
+          <div class="text-sm text-gray-400">Founder, Alainquant LLC</div>
+        </div>
+        <div class="bg-gray-900 rounded p-4">
+          <img src="https://via.placeholder.com/300x300?text=Speaker+3" alt="speaker" class="w-full h-44 object-cover rounded" />
+          <div class="mt-3 font-semibold">L Venkata Subramaniam</div>
+          <div class="text-sm text-gray-400">IBM Quantum India Leader</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE / CONTACT -->
+    <section id="venue" class="max-w-6xl mx-auto px-6 py-12">
+      <h3 class="text-xl font-semibold">Venue & Contact</h3>
+      <div class="mt-4 grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-300">For venue details and registration questions, contact the student coordinators.</p>
+          <ul class="mt-4 text-gray-400 space-y-2">
+            <li>Nandan Patel — <em>replace-with-real-phone</em></li>
+            <li>Ashwin Sivakumar — <em>replace-with-real-phone</em></li>
+            <li>Hari Shankar K Nair — <em>replace-with-real-phone</em></li>
+            <li>Rithika N — <em>replace-with-real-phone</em></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-gray-300">Follow on social media:</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="px-4 py-2 rounded bg-gray-800">Instagram</a>
+            <a href="#" class="px-4 py-2 rounded bg-gray-800">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 mt-12">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+        <div>© The Quantumplators 2023-24. All Rights Reserved.</div>
+        <div>Made with ❤️ • Starter template</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    // mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
