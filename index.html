@@ -32,6 +32,7 @@
         .carousel {
             width: 100%;
             overflow: hidden;
+            position: relative;
         }
         .carousel-inner {
             display: flex;
@@ -46,6 +47,14 @@
             background-size: cover;
             background-position: center;
         }
+        .broken-image-placeholder {
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -54,7 +63,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <img src="https://www.sharjah.ac.ae/sites/default/files/logo/UOS_Logo_EN_H.png" alt="University of Sharjah Logo" class="h-12">
+                    <img src="https://www.sharjah.ac.ae/sites/default/files/logo/UOS_Logo_EN_H.png" alt="University of Sharjah Logo" class="h-12" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22100%22 height%3D%2240%22%3E%3Crect width%3D%22100%22 height%3D%2240%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2250%22 y%3D%2220%22 font-family%3D%22Arial%22 font-size%3D%2212%22 text-anchor%3D%22middle%22%3EUOS Logo%3C%2Ftext%3E%3C%2Fsvg%3E'">
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
@@ -70,24 +79,24 @@
     </nav>
 
     <!-- Hero Section with Carousel -->
-    <section id="home" class="min-h-screen flex items-center justify-center">
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
         <div class="carousel w-full">
             <div class="carousel-inner" id="carouselInner">
-                <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/qiskit-fall-fest-2025-logo.png');">
+                <div class="carousel-item broken-image-placeholder" data-src="assets/qiskit-fall-fest-2025-logo.png">
                     <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
                         <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2025</h1>
                         <p class="text-xl mb-6">University of Sharjah | October 1st - 4th, 2025</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/100-years-quantum.png');">
+                <div class="carousel-item broken-image-placeholder" data-src="assets/100-years-quantum.png">
                     <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
                         <h1 class="text-5xl font-bold mb-4">Celebrating Quantum Legacy</h1>
                         <p class="text-xl mb-6">Join us for a historic event!</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-exploration.png');">
+                <div class="carousel-item broken-image-placeholder" data-src="assets/quantum-exploration.png">
                     <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
                         <h1 class="text-5xl font-bold mb-4">Explore Quantum Frontiers</h1>
                         <p class="text-xl mb-6">Workshops & Hackathons Await!</p>
@@ -95,10 +104,10 @@
                     </div>
                 </div>
             </div>
-            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75" onclick="changeSlide(-1)">
+            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 z-10" onclick="changeSlide(-1)">
                 &#10094;
             </button>
-            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75" onclick="changeSlide(1)">
+            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 z-10" onclick="changeSlide(1)">
                 &#10095;
             </button>
         </div>
@@ -113,8 +122,8 @@
                     <p class="text-lg text-gray-600 mb-6">Qiskit Fall Fest is the world’s largest collection of student-run quantum computing events. As one of the 50 sponsored international universities selected to host it, we bring together a collection of talented quantum enthusiasts along with IBM Quantum members to mark a celebration of the advances that quantum computing has made in the past year, with experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus. With open arms, we welcome you to the event and are hoping to see you there!!</p>
                 </div>
                 <div class="relative">
-                    <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-symbol.png" alt="Quantum Symbol" class="rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                    <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-teacher.png" alt="Quantum Teacher" class="absolute -top-10 -left-10 rounded-full border-4 border-white shadow-lg">
+                    <img src="assets/quantum-symbol.png" alt="Quantum Symbol" class="rounded-lg shadow-lg transform hover:scale-105 transition duration-300 w-full" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22400%22 height%3D%22300%22%3E%3Crect width%3D%22400%22 height%3D%22300%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%22200%22 y%3D%22150%22 font-family%3D%22Arial%22 font-size%3D%2218%22 text-anchor%3D%22middle%22%3EQuantum Symbol%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                    <img src="assets/quantum-teacher.png" alt="Quantum Teacher" class="absolute -top-10 -left-10 rounded-full border-4 border-white shadow-lg w-24 h-24 object-cover" onerror="this.style.display='none'">
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
@@ -193,17 +202,17 @@
             <h2 class="text-3xl font-bold text-center mb-8">Speakers</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center">
-                    <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-teacher.png" alt="Pawel Gora" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300">
+                    <img src="assets/quantum-teacher.png" alt="Pawel Gora" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300 w-32 h-32 object-cover" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22128%22 height%3D%22128%22%3E%3Ccircle cx%3D%2264%22 cy%3D%2264%22 r%3D%2264%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2264%22 y%3D%2270%22 font-family%3D%22Arial%22 font-size%3D%2214%22 text-anchor%3D%22middle%22%3EPawel Gora%3C%2Ftext%3E%3C%2Fsvg%3E'">
                     <h3 class="text-xl font-semibold">Pawel Gora</h3>
                     <p class="text-gray-600">University of Warsaw</p>
                 </div>
                 <div class="text-center">
-                    <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-researcher.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300">
+                    <img src="assets/quantum-researcher.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300 w-32 h-32 object-cover" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22128%22 height%3D%22128%22%3E%3Ccircle cx%3D%2264%22 cy%3D%2264%22 r%3D%2264%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2264%22 y%3D%2270%22 font-family%3D%22Arial%22 font-size%3D%2214%22 text-anchor%3D%22middle%22%3EAlain Chancé%3C%2Ftext%3E%3C%2Fsvg%3E'">
                     <h3 class="text-xl font-semibold">Alain Chancé</h3>
                     <p class="text-gray-600">Founder CEO Alainquant LLC</p>
                 </div>
                 <div class="text-center">
-                    <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-leader.png" alt="L Venkata Subramaniam" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300">
+                    <img src="assets/quantum-leader.png" alt="L Venkata Subramaniam" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300 w-32 h-32 object-cover" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22128%22 height%3D%22128%22%3E%3Ccircle cx%3D%2264%22 cy%3D%2264%22 r%3D%2264%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2264%22 y%3D%2270%22 font-family%3D%22Arial%22 font-size%3D%2212%22 text-anchor%3D%22middle%22%3EL Venkata Subramaniam%3C%2Ftext%3E%3C%2Fsvg%3E'">
                     <h3 class="text-xl font-semibold">L Venkata Subramaniam</h3>
                     <p class="text-gray-600">IBM Quantum India Leader</p>
                 </div>
@@ -218,13 +227,13 @@
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.529054676188!2d55.48500631503664!3d25.28628738384862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b5f5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1696425600000!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/venue-map-accent.png" alt="Venue Accent" class="mt-4 rounded-lg shadow-lg mx-auto">
+            <img src="assets/venue-map-accent.png" alt="Venue Accent" class="mt-4 rounded-lg shadow-lg mx-auto w-full max-w-md" onerror="this.style.display='none'">
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7zl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -243,7 +252,7 @@
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-1.453.066-2.944.404-4.07 1.53-1.126 1.126-1.464 2.617-1.53 4.07-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.066 1.453.404 2.944 1.53 4.07 1.126 1.126 2.617 1.464 4.07 1.53 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.453-.066 2.944-.404 4.07-1.53 1.126-1.126 1.464-2.617 1.53-4.07.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.066-1.453-.404-2.944-1.53-4.07-1.126-1.126-2.617-1.464-4.07-1.53-1.28-.058-1.688-.072-4.947-.072z"/></svg>
                         </a>
                         <a href="https://www.linkedin.com/in/google-developer-student-club-university-of-sharjah/" target="_blank" class="text-gray-600 hover:text-blue-600">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 0 3.614 2.008 3.614 4.621v5.579z"/></svg>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.050 0 3.614 2.008 3.614 4.621v5.579z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -255,7 +264,7 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>© The Quantumplators 2023-25. All Rights Reserved.</p>
-            <img src="https://raw.githubusercontent.com/danilv03/qiskit-fallfest/main/assets/quantum-accent.png" alt="Quantum Accent" class="mt-4 mx-auto rounded-full shadow-lg">
+            <img src="assets/quantum-accent.png" alt="Quantum Accent" class="mt-4 mx-auto rounded-full shadow-lg w-24 h-24 object-cover" onerror="this.style.display='none'">
         </div>
     </footer>
 
@@ -282,6 +291,32 @@
 
         // Auto-slide every 5 seconds
         setInterval(() => changeSlide(1), 5000);
+
+        // Image loading and fallback handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle carousel images
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            carouselItems.forEach(item => {
+                const bgImage = new Image();
+                bgImage.src = item.getAttribute('data-src');
+                bgImage.onload = function() {
+                    item.style.backgroundImage = `url('${bgImage.src}')`;
+                    item.classList.remove('broken-image-placeholder');
+                };
+                bgImage.onerror = function() {
+                    // Keep the placeholder style if image fails to load
+                    console.warn('Failed to load carousel image:', item.getAttribute('data-src'));
+                };
+            });
+
+            // Handle other images with onerror attribute already set
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.hasAttribute('onerror')) {
+                    img.setAttribute('onerror', "this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22' + this.width + '%22 height%3D%22' + this.height + '%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2250%25%22 y%3D%2250%25%22 font-family%3D%22Arial%22 font-size%3D%2214%22 text-anchor%3D%22middle%22 dominant-baseline%3D%22middle%22%3EImage not found%3C%2Ftext%3E%3C%2Fsvg%3E'");
+                }
+            });
+        });
     </script>
 </body>
 </html>
