@@ -29,6 +29,23 @@
             width: 100%;
             height: 100%;
         }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            min-width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -52,12 +69,38 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <div class="text-center">
-            <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2024</h1>
-            <p class="text-xl mb-6">University of Sharjah | October 1st - 4th, 2024</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="min-h-screen flex items-center justify-center">
+        <div class="carousel w-full">
+            <div class="carousel-inner" id="carouselInner">
+                <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x500.png?text=Qiskit+Fall+Fest+2025+Logo');">
+                    <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
+                        <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2025</h1>
+                        <p class="text-xl mb-6">University of Sharjah | October 1st - 4th, 2025</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x500.png?text=100+Years+of+Quantum+Mechanics');">
+                    <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
+                        <h1 class="text-5xl font-bold mb-4">Celebrating Quantum Legacy</h1>
+                        <p class="text-xl mb-6">Join us for a historic event!</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x500.png?text=Quantum+Exploration');">
+                    <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
+                        <h1 class="text-5xl font-bold mb-4">Explore Quantum Frontiers</h1>
+                        <p class="text-xl mb-6">Workshops & Hackathons Await!</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75" onclick="changeSlide(-1)">
+                &#10094;
+            </button>
+            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75" onclick="changeSlide(1)">
+                &#10095;
+            </button>
         </div>
     </section>
 
@@ -65,15 +108,23 @@
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-8">About the Event</h2>
-            <p class="text-lg text-gray-600 mb-6">Qiskit Fall Fest is the world’s largest collection of student-run quantum computing events. As one of the 50 sponsored international universities selected to host it, we bring together a collection of talented quantum enthusiasts along with IBM Quantum members to mark a celebration of the advances that quantum computing has made in the past year, with experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus. With open arms, we welcome you to the event and are hoping to see you there!!</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg text-gray-600 mb-6">Qiskit Fall Fest is the world’s largest collection of student-run quantum computing events. As one of the 50 sponsored international universities selected to host it, we bring together a collection of talented quantum enthusiasts along with IBM Quantum members to mark a celebration of the advances that quantum computing has made in the past year, with experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus. With open arms, we welcome you to the event and are hoping to see you there!!</p>
+                </div>
+                <div class="relative">
+                    <img src="https://via.placeholder.com/400x300.png?text=Quantum+Symbol" alt="Quantum Symbol" class="rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/150x150.png?text=Quantum+Teacher" alt="Quantum Teacher" class="absolute -top-10 -left-10 rounded-full border-4 border-white shadow-lg">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                 <div>
                     <h3 class="text-2xl font-semibold mb-4">Quantumplators</h3>
-                    <p class="text-gray-600">Introducing Quantumplators, the pioneering Quantum Computing Special Team at University of Sharjah. Quantumplators is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing. Our mission is to propel University of Sharjah into the quantum era by fostering quantum literacy, preparing for cutting-edge quantum hackathons, and providing ample research opportunities.</p>
+                    <p class="text-gray-600">Introducing Quantumplators, the pioneering Quantum Computing Special Team at University of Sharjah. Quantumplators is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing.</p>
                 </div>
                 <div>
                     <h3 class="text-2xl font-semibold mb-4">IBM Qiskit</h3>
-                    <p class="text-gray-600">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Qiskit includes tools for building quantum circuits, simulating quantum systems, and developing quantum algorithms.</p>
+                    <p class="text-gray-600">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware.</p>
                 </div>
             </div>
         </div>
@@ -85,7 +136,7 @@
             <h2 class="text-3xl font-bold text-center mb-8">Schedule</h2>
             <div class="space-y-4">
                 <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 1 - October 1, 2024</h3>
+                    <h3 class="text-xl font-semibold">Day 1 - October 1, 2025</h3>
                     <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
                     <div class="details hidden mt-4">
                         <ul class="list-disc pl-5 text-gray-600">
@@ -98,7 +149,7 @@
                     </div>
                 </div>
                 <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 2 - October 2, 2024</h3>
+                    <h3 class="text-xl font-semibold">Day 2 - October 2, 2025</h3>
                     <p class="text-gray-600">Venue: Online - MS Teams</p>
                     <div class="details hidden mt-4">
                         <ul class="list-disc pl-5 text-gray-600">
@@ -109,7 +160,7 @@
                     </div>
                 </div>
                 <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 3 - October 3, 2024</h3>
+                    <h3 class="text-xl font-semibold">Day 3 - October 3, 2025</h3>
                     <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
                     <div class="details hidden mt-4">
                         <ul class="list-disc pl-5 text-gray-600">
@@ -121,7 +172,7 @@
                     </div>
                 </div>
                 <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
-                    <h3 class="text-xl font-semibold">Day 4 - October 4, 2024</h3>
+                    <h3 class="text-xl font-semibold">Day 4 - October 4, 2025</h3>
                     <p class="text-gray-600">Venue: Conference Hall, University of Sharjah</p>
                     <div class="details hidden mt-4">
                         <ul class="list-disc pl-5 text-gray-600">
@@ -142,19 +193,19 @@
             <h2 class="text-3xl font-bold text-center mb-8">Speakers</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="text-xl font-semibold">Speaker 1</h3>
-                    <p class="text-gray-600">TBA</p>
+                    <img src="https://via.placeholder.com/200x200.png?text=Speaker+1+Quantum+Teacher" alt="Speaker 1" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300">
+                    <h3 class="text-xl font-semibold">Pawel Gora</h3>
+                    <p class="text-gray-600">University of Warsaw</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="text-xl font-semibold">Speaker 2</h3>
-                    <p class="text-gray-600">TBA</p>
+                    <img src="https://via.placeholder.com/200x200.png?text=Speaker+2+Quantum+Researcher" alt="Speaker 2" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300">
+                    <h3 class="text-xl font-semibold">Alain Chancé</h3>
+                    <p class="text-gray-600">Founder CEO Alainquant LLC</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="text-xl font-semibold">Speaker 3</h3>
-                    <p class="text-gray-600">TBA</p>
+                    <img src="https://via.placeholder.com/200x200.png?text=Speaker+3+Quantum+Leader" alt="Speaker 3" class="rounded-full mx-auto mb-4 shadow-lg hover:scale-110 transition duration-300">
+                    <h3 class="text-xl font-semibold">L Venkata Subramaniam</h3>
+                    <p class="text-gray-600">IBM Quantum India Leader</p>
                 </div>
             </div>
         </div>
@@ -167,6 +218,7 @@
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.529054676188!2d55.48500631503664!3d25.28628738384862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b5f5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1696425600000!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
             </div>
+            <img src="https://via.placeholder.com/300x200.png?text=Venue+Map+Accent" alt="Venue Accent" class="mt-4 rounded-lg shadow-lg mx-auto">
         </div>
     </section>
 
@@ -202,7 +254,8 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>© The Quantumplators 2023-24. All Rights Reserved.</p>
+            <p>© The Quantumplators 2023-25. All Rights Reserved.</p>
+            <img src="https://via.placeholder.com/100x100.png?text=Quantum+Accent" alt="Quantum Accent" class="mt-4 mx-auto rounded-full shadow-lg">
         </div>
     </footer>
 
@@ -216,6 +269,19 @@
                 });
             });
         });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            document.getElementById('carouselInner').style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(() => changeSlide(1), 5000);
     </script>
 </body>
 </html>
