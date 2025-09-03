@@ -1,173 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Qiskit Fall Fest — Sharjah Edition</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CDN -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'bg-dark': '#05060a',
-            'accent-pink': '#ff6fb5',
-            'accent-purple': '#8b5cf6',
-            'day1': '#8b5cf6',
-            'day2': '#ff6fb5',
-            'day3': '#34d399',
-            'day4': '#fbbf24'
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qiskit Fall Fest 2025 - University of Sharjah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
         }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-    .blob { filter: drop-shadow(0 10px 30px rgba(0,0,0,0.45)); }
-    .tab-button { transition: all 0.2s ease-in-out; }
-    .tab-button.active { font-weight: 700; border-b-2 border-current; }
-  </style>
+        .schedule-day {
+            transition: all 0.3s ease;
+        }
+        .schedule-day:hover {
+            background-color: #f3f4f6;
+        }
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
-<body class="bg-bg-dark text-gray-100 leading-relaxed">
-
-  <!-- NAV omitted for brevity -->
-
-  <!-- HERO omitted for brevity -->
-
-  <!-- ABOUT, PARTNERS omitted for brevity -->
-
-  <!-- SCHEDULE -->
-  <section id="schedule" class="max-w-6xl mx-auto px-6 py-12">
-    <h3 class="text-xl font-semibold mb-6">Schedule</h3>
-
-    <!-- Tabs -->
-    <div class="flex flex-wrap gap-2 mb-6">
-      <button class="tab-button px-4 py-2 rounded text-day1 bg-gray-800 hover:bg-gray-700" data-day="day1">Day 1</button>
-      <button class="tab-button px-4 py-2 rounded text-day2 bg-gray-800 hover:bg-gray-700" data-day="day2">Day 2</button>
-      <button class="tab-button px-4 py-2 rounded text-day3 bg-gray-800 hover:bg-gray-700" data-day="day3">Day 3</button>
-      <button class="tab-button px-4 py-2 rounded text-day4 bg-gray-800 hover:bg-gray-700" data-day="day4">Day 4</button>
-    </div>
-
-    <!-- Day contents -->
-    <div id="day1" class="day-content hidden">
-      <div class="grid gap-4">
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day1">10:00 AM</div>
-          <div>
-            <div class="font-semibold">Opening Ceremony</div>
-            <div class="text-gray-400 text-sm">Welcome speech and introduction to Qiskit Fall Fest.</div>
-          </div>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="https://www.sharjah.ac.ae/sites/default/files/logo/UOS_Logo_EN_H.png" alt="University of Sharjah Logo" class="h-12">
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
+                    <a href="#schedule" class="text-gray-700 hover:text-blue-600">Schedule</a>
+                    <a href="#speakers" class="text-gray-700 hover:text-blue-600">Speakers</a>
+                    <a href="#venue" class="text-gray-700 hover:text-blue-600">Venue</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Register</a>
+                </div>
+            </div>
         </div>
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day1">11:30 AM</div>
-          <div>
-            <div class="font-semibold">Quantum 101 Workshop</div>
-            <div class="text-gray-400 text-sm">Hands-on basics of quantum computing using Qiskit.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </nav>
 
-    <div id="day2" class="day-content hidden">
-      <div class="grid gap-4">
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day2">09:30 AM</div>
-          <div>
-            <div class="font-semibold">Team Formation</div>
-            <div class="text-gray-400 text-sm">Participants form teams for the hackathon.</div>
-          </div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2024</h1>
+            <p class="text-xl mb-6">University of Sharjah | October 1st - 4th, 2024</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
         </div>
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day2">11:00 AM</div>
-          <div>
-            <div class="font-semibold">Hands-on Lab</div>
-            <div class="text-gray-400 text-sm">Practical exercises using Qiskit and quantum circuits.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div id="day3" class="day-content hidden">
-      <div class="grid gap-4">
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day3">10:00 AM</div>
-          <div>
-            <div class="font-semibold">Hackathon Start</div>
-            <div class="text-gray-400 text-sm">Kick-off of the 48-hour hackathon.</div>
-          </div>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">About the Event</h2>
+            <p class="text-lg text-gray-600 mb-6">Qiskit Fall Fest is the world’s largest collection of student-run quantum computing events. As one of the 50 sponsored international universities selected to host it, we bring together a collection of talented quantum enthusiasts along with IBM Quantum members to mark a celebration of the advances that quantum computing has made in the past year, with experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus. With open arms, we welcome you to the event and are hoping to see you there!!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Quantumplators</h3>
+                    <p class="text-gray-600">Introducing Quantumplators, the pioneering Quantum Computing Special Team at University of Sharjah. Quantumplators is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing. Our mission is to propel University of Sharjah into the quantum era by fostering quantum literacy, preparing for cutting-edge quantum hackathons, and providing ample research opportunities.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">IBM Qiskit</h3>
+                    <p class="text-gray-600">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Qiskit includes tools for building quantum circuits, simulating quantum systems, and developing quantum algorithms.</p>
+                </div>
+            </div>
         </div>
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day3">02:00 PM</div>
-          <div>
-            <div class="font-semibold">Mentorship Session</div>
-            <div class="text-gray-400 text-sm">Mentors guide teams on Qiskit projects.</div>
-          </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Schedule</h2>
+            <div class="space-y-4">
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold">Day 1 - October 1, 2024</h3>
+                    <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>09:00 AM - Opening Ceremony</li>
+                            <li>10:00 AM - Introduction to Quantum Computing Workshop</li>
+                            <li>01:00 PM - Lunch Break</li>
+                            <li>02:00 PM - Qiskit Basics Tutorial</li>
+                            <li>04:00 PM - Networking Session</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold">Day 2 - October 2, 2024</h3>
+                    <p class="text-gray-600">Venue: Online - MS Teams</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>10:00 AM - Quantum Algorithms Webinar</li>
+                            <li>12:00 PM - Virtual Q&A with IBM Quantum Experts</li>
+                            <li>02:00 PM - Online Hackathon Kickoff</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold">Day 3 - October 3, 2024</h3>
+                    <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>09:00 AM - Advanced Qiskit Workshop</li>
+                            <li>11:00 AM - Guest Lecture by Pawel Gora</li>
+                            <li>01:00 PM - Lunch Break</li>
+                            <li>02:00 PM - Hackathon Progress Check-in</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
+                    <h3 class="text-xl font-semibold">Day 4 - October 4, 2024</h3>
+                    <p class="text-gray-600">Venue: Conference Hall, University of Sharjah</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>09:00 AM - Hackathon Final Presentations</li>
+                            <li>12:00 PM - Keynote by Alain Chancé</li>
+                            <li>02:00 PM - Awards Ceremony</li>
+                            <li>03:00 PM - Closing Remarks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <div id="day4" class="day-content hidden">
-      <div class="grid gap-4">
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day4">10:00 AM</div>
-          <div>
-            <div class="font-semibold">Hackathon Finale</div>
-            <div class="text-gray-400 text-sm">Presentation of team projects and judging.</div>
-          </div>
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Speakers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold">Speaker 1</h3>
+                    <p class="text-gray-600">TBA</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold">Speaker 2</h3>
+                    <p class="text-gray-600">TBA</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold">Speaker 3</h3>
+                    <p class="text-gray-600">TBA</p>
+                </div>
+            </div>
         </div>
-        <div class="p-4 bg-gray-900 rounded shadow flex flex-col md:flex-row gap-4">
-          <div class="w-24 font-bold text-day4">03:00 PM</div>
-          <div>
-            <div class="font-semibold">Awards Ceremony</div>
-            <div class="text-gray-400 text-sm">Winners announced and prizes awarded.</div>
-          </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Venue</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.529054676188!2d55.48500631503664!3d25.28628738384862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b5f5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1696425600000!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VENUE / CONTACT with map and social links -->
-  <section id="venue" class="max-w-6xl mx-auto px-6 py-12">
-    <h3 class="text-xl font-semibold">Venue & Contact</h3>
-    <div class="mt-4 grid md:grid-cols-2 gap-6">
-      <div>
-        <p class="text-gray-300">For venue details and registration questions, contact the student coordinators.</p>
-        <ul class="mt-4 text-gray-400 space-y-2">
-          <li>Coordinator One — <em>+971-xxxx</em></li>
-          <li>Coordinator Two — <em>+971-xxxx</em></li>
-        </ul>
-        <p class="mt-4">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.628958414722!2d55.40628671500129!3d25.348437183865117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f4f3b0d6f1b3%3A0x1c3f30f5f6c9c8b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1693812345678!5m2!1sen!2sae" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </p>
-      </div>
-      <div>
-        <p class="text-gray-300">Follow on social media:</p>
-        <div class="mt-4 flex gap-3">
-          <a href="https://www.instagram.com/uos.gdg?utm_source=ig_web_button_share_sheet&igsh=MWt6enpqNnJuMnNlbA==" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700">Instagram</a>
-          <a href="https://www.linkedin.com/in/google-developer-student-club-university-of-sharjah/" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700">LinkedIn</a>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Student Coordinators</h3>
+                    <ul class="text-gray-600">
+                        <li>Kirill: 9099906520</li>
+                        <li>Omar: 6360910426</li>
+                        <li>Danil: 6282382764</li>
+                        <li>Ahmed: 9345459249</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/uos.gdg?utm_source=ig_web_button_share_sheet&igsh=MWt6enpqNnJuMnNlbA==" target="_blank" class="text-gray-600 hover:text-blue-600">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-1.453.066-2.944.404-4.07 1.53-1.126 1.126-1.464 2.617-1.53 4.07-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.066 1.453.404 2.944 1.53 4.07 1.126 1.126 2.617 1.464 4.07 1.53 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.453-.066 2.944-.404 4.07-1.53 1.126-1.126 1.464-2.617 1.53-4.07.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.066-1.453-.404-2.944-1.53-4.07-1.126-1.126-2.617-1.464-4.07-1.53-1.28-.058-1.688-.072-4.947-.072z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/google-developer-student-club-university-of-sharjah/" target="_blank" class="text-gray-600 hover:text-blue-600">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 0 3.614 2.008 3.614 4.621v5.579z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER omitted for brevity -->
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© The Quantumplators 2023-24. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    navToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
