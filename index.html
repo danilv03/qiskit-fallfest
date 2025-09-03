@@ -30,17 +30,7 @@
             width: 100%;
             height: 100%;
         }
-        .carousel {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .carousel-item {
-            min-width: 100%;
+        .hero-section {
             height: 500px;
             display: flex;
             align-items: center;
@@ -58,12 +48,6 @@
         .quantum-bg {
             background: linear-gradient(135deg, #0f4c81 0%, #1cb5e0 100%);
         }
-        .countdown-box {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            min-width: 80px;
-        }
         .logo-container {
             display: flex;
             align-items: center;
@@ -80,6 +64,13 @@
             .logo-img {
                 height: 40px;
             }
+        }
+        .register-btn {
+            transition: all 0.3s ease;
+        }
+        .register-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -104,62 +95,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Carousel -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
-        <div class="carousel w-full">
-            <div class="carousel-inner" id="carouselInner">
-                <div class="carousel-item" style="background-image: url('Fall_Fest_Placeholder_2058531126.png'); background-color: #0f4c81;">
-                    <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
-                        <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2025</h1>
-                        <p class="text-xl mb-6">University of Sharjah | October 1st - 4th, 2025</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('Atom_01.png'); background-color: #1cb5e0;">
-                    <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
-                        <h1 class="text-5xl font-bold mb-4">Celebrating Quantum Legacy</h1>
-                        <p class="text-xl mb-6">Join us for a historic event!</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('Atom_03.png'); background-color: #0f4c81;">
-                    <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
-                        <h1 class="text-5xl font-bold mb-4">Explore Quantum Frontiers</h1>
-                        <p class="text-xl mb-6">Workshops & Hackathons Await!</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
-                    </div>
-                </div>
-            </div>
-            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 z-10" onclick="changeSlide(-1)">
-                &#10094;
-            </button>
-            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 z-10" onclick="changeSlide(1)">
-                &#10095;
-            </button>
-        </div>
-    </section>
-
-    <!-- Countdown Section -->
-    <section class="quantum-bg text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-8">Countdown to the Event</h2>
-            <div class="flex justify-center space-x-4 md:space-x-8" id="countdown">
-                <div class="countdown-box">
-                    <div class="text-4xl font-bold" id="days">00</div>
-                    <div class="text-sm">Days</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="text-4xl font-bold" id="hours">00</div>
-                    <div class="text-sm">Hours</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="text-4xl font-bold" id="minutes">00</div>
-                    <div class="text-sm">Minutes</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="text-4xl font-bold" id="seconds">00</div>
-                    <div class="text-sm">Seconds</div>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="pt-16">
+        <div class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Theme.png');">
+            <div class="text-center text-white p-6 rounded-lg">
+                <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2025</h1>
+                <p class="text-xl mb-8">University of Sharjah | October 1st - 4th, 2025</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="register-btn bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg inline-block">Register Now</a>
             </div>
         </div>
     </section>
@@ -180,10 +122,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="Badge_01.png" alt="Quantumplators Badge" class="h-16 w-16 mr-4">
-                        <h3 class="text-2xl font-semibold">Quantumplators</h3>
+                        <img src="Badge_01.png" alt="GDG Club Badge" class="h-16 w-16 mr-4">
+                        <h3 class="text-2xl font-semibold">GDG Club</h3>
                     </div>
-                    <p class="text-gray-600">Introducing Quantumplators, the pioneering Quantum Computing Special Team at University of Sharjah. Quantumplators is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing.</p>
+                    <p class="text-gray-600">Introducing GDG Club, the pioneering Quantum Computing Special Team at University of Sharjah. GDG Club is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing.</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="flex items-center mb-4">
@@ -196,7 +138,7 @@
         </div>
     </section>
 
-    <!-- Schedule Section (Original Design) -->
+    <!-- Schedule Section -->
     <section id="schedule" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-8">Schedule</h2>
@@ -341,7 +283,7 @@
                         </a>
                         <a href="https://www.linkedin.com/in/google-developer-student-club-university-of-sharjah/" target="_blank" class="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-shadow">
                             <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 0 3.614 2.008 3.614 4.621v5.579z"/>
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 极速3.614 2.008 3.614 4.621v5.579z"/>
                             </svg>
                         </a>
                     </div>
@@ -353,8 +295,8 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>© The Quantumplators 2023-25. All Rights Reserved.</p>
-            <img src="Sticker_Fall-fest-badge_Black.png" alt="Quantum Accent" class="mt-4 mx-auto w-20 h-20 object-cover">
+            <p>© 2025 GDG Club. All Rights Reserved.</p>
+            <img src="Sticker_Fall-fest-badge_Black.png" alt="Qiskit Fall Fest Badge" class="mt-4 mx-auto w-20 h-20 object-cover">
         </div>
     </footer>
 
@@ -368,44 +310,6 @@
                 });
             });
         });
-
-        // Carousel functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        const totalSlides = slides.length;
-
-        function changeSlide(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            document.getElementById('carouselInner').style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        // Auto-slide every 5 seconds
-        setInterval(() => changeSlide(1), 5000);
-
-        // Countdown timer
-        function updateCountdown() {
-            const eventDate = new Date('October 1, 2025 09:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = eventDate - now;
-
-            if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<div class="text-2xl">The event has started!</div>';
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
     </script>
 </body>
 </html>
