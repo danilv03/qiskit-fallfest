@@ -89,7 +89,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <img src="assets/UOS-LOGO-RGB.png" alt="University of Sharjah Logo" class="h-12" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22100%22 height%3D%2240%22%3E%3Crect width%3D%22100%22 height%3D%2240%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2250%22 y%3D%2220%22 font-family%3D%22Arial%22 font-size%3D%2212%22 text-anchor%3D%22middle%22%3EUOS Logo%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                    <img src="UOS-LOGO-RGB.png" alt="University of Sharjah Logo" class="h-12">
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
@@ -108,21 +108,21 @@
     <section id="home" class="min-h-screen flex items-center justify-center pt-16">
         <div class="carousel w-full">
             <div class="carousel-inner" id="carouselInner">
-                <div class="carousel-item" style="background-image: url('assets/Fall_Fest_Placeholder_2058531126.png'); background-color: #0f4c81;">
+                <div class="carousel-item" style="background-image: url('Fall_Fest_Placeholder_2058531126.png'); background-color: #0f4c81;">
                     <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
                         <h1 class="text-5xl font-bold mb-4">Qiskit Fall Fest 2025</h1>
                         <p class="text-xl mb-6">University of Sharjah | October 1st - 4th, 2025</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/Atom_01.png'); background-color: #1cb5e0;">
+                <div class="carousel-item" style="background-image: url('Atom_01.png'); background-color: #1cb5e0;">
                     <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
                         <h1 class="text-5xl font-bold mb-4">Celebrating Quantum Legacy</h1>
                         <p class="text-xl mb-6">Join us for a historic event!</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Register Now</a>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/Atom_03.png'); background-color: #0f4c81;">
+                <div class="carousel-item" style="background-image: url('Atom_03.png'); background-color: #0f4c81;">
                     <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
                         <h1 class="text-5xl font-bold mb-4">Explore Quantum Frontiers</h1>
                         <p class="text-xl mb-6">Workshops & Hackathons Await!</p>
@@ -174,20 +174,20 @@
                     <p class="text-lg text-gray-600 mb-6">With experienced quantum scientists and budding young quantum enthusiasts collaborating to showcase their talents at the workshops and hackathons at the University of Sharjah campus, we welcome you to the event and are hoping to see you there!</p>
                 </div>
                 <div class="relative">
-                    <img src="assets/Web_Community-Page_Image.png" alt="Quantum Community" class="rounded-lg shadow-lg transform hover:scale-105 transition duration-300 w-full">
+                    <img src="Web_Community-Page_Image.png" alt="Quantum Community" class="rounded-lg shadow-lg transform hover:scale-105 transition duration-300 w-full">
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/Badge_01.png" alt="Quantumplators Badge" class="h-16 w-16 mr-4">
+                        <img src="Badge_01.png" alt="Quantumplators Badge" class="h-16 w-16 mr-4">
                         <h3 class="text-2xl font-semibold">Quantumplators</h3>
                     </div>
                     <p class="text-gray-600">Introducing Quantumplators, the pioneering Quantum Computing Special Team at University of Sharjah. Quantumplators is a dynamic force driven by passionate college students, charting new territories in the ever-expanding world of quantum computing.</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/qiskit123.png" alt="IBM Qiskit Logo" class="h-16 w-16 mr-4">
+                        <img src="qiskit123.png" alt="IBM Qiskit Logo" class="h-16 w-16 mr-4">
                         <h3 class="text-2xl font-semibold">IBM Qiskit</h3>
                     </div>
                     <p class="text-gray-600">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Join us to learn and experiment with this cutting-edge technology.</p>
@@ -196,54 +196,58 @@
         </div>
     </section>
 
-    <!-- Schedule Section -->
+    <!-- Schedule Section (Original Design) -->
     <section id="schedule" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Event Schedule</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="assets/Timeline_01.png" alt="Day 1 Timeline" class="w-full h-auto mb-4 rounded">
+            <h2 class="text-3xl font-bold text-center mb-8">Schedule</h2>
+            <div class="space-y-4">
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
                     <h3 class="text-xl font-semibold">Day 1 - October 1, 2025</h3>
-                    <p class="text-gray-600 mb-2">Venue: Main Auditorium, University of Sharjah</p>
-                    <ul class="list-disc pl-5 text-gray-600">
-                        <li>09:00 AM - Opening Ceremony</li>
-                        <li>10:00 AM - Introduction to Quantum Computing Workshop</li>
-                        <li>01:00 PM - Lunch Break</li>
-                        <li>02:00 PM - Qiskit Basics Tutorial</li>
-                        <li>04:00 PM - Networking Session</li>
-                    </ul>
+                    <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>09:00 AM - Opening Ceremony</li>
+                            <li>10:00 AM - Introduction to Quantum Computing Workshop</li>
+                            <li>01:00 PM - Lunch Break</li>
+                            <li>02:00 PM - Qiskit Basics Tutorial</li>
+                            <li>04:00 PM - Networking Session</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="assets/Timeline_02.png" alt="Day 2 Timeline" class="w-full h-auto mb-4 rounded">
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
                     <h3 class="text-xl font-semibold">Day 2 - October 2, 2025</h3>
-                    <p class="text-gray-600 mb-2">Venue: Online - MS Teams</p>
-                    <ul class="list-disc pl-5 text-gray-600">
-                        <li>10:00 AM - Quantum Algorithms Webinar</li>
-                        <li>12:00 PM - Virtual Q&A with IBM Quantum Experts</li>
-                        <li>02:00 PM - Online Hackathon Kickoff</li>
-                    </ul>
+                    <p class="text-gray-600">Venue: Online - MS Teams</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>10:00 AM - Quantum Algorithms Webinar</li>
+                            <li>12:00 PM - Virtual Q&A with IBM Quantum Experts</li>
+                            <li>02:00 PM - Online Hackathon Kickoff</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="assets/Timeline_03.png" alt="Day 3 Timeline" class="w-full h-auto mb-4 rounded">
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
                     <h3 class="text-xl font-semibold">Day 3 - October 3, 2025</h3>
-                    <p class="text-gray-600 mb-2">Venue: Main Auditorium, University of Sharjah</p>
-                    <ul class="list-disc pl-5 text-gray-600">
-                        <li>09:00 AM - Advanced Qiskit Workshop</li>
-                        <li>11:00 AM - Guest Lecture by Pawel Gora</li>
-                        <li>01:00 PM - Lunch Break</li>
-                        <li>02:00 PM - Hackathon Progress Check-in</li>
-                    </ul>
+                    <p class="text-gray-600">Venue: Main Auditorium, University of Sharjah</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>09:00 AM - Advanced Qiskit Workshop</li>
+                            <li>11:00 AM - Guest Lecture by Pawel Gora</li>
+                            <li>01:00 PM - Lunch Break</li>
+                            <li>02:00 PM - Hackathon Progress Check-in</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="assets/Timeline_04.png" alt="Day 4 Timeline" class="w-full h-auto mb-4 rounded">
+                <div class="schedule-day bg-white p-6 rounded-lg shadow cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
                     <h3 class="text-xl font-semibold">Day 4 - October 4, 2025</h3>
-                    <p class="text-gray-600 mb-2">Venue: Conference Hall, University of Sharjah</p>
-                    <ul class="list-disc pl-5 text-gray-600">
-                        <li>09:00 AM - Hackathon Final Presentations</li>
-                        <li>12:00 PM - Keynote by Alain Chancé</li>
-                        <li>02:00 PM - Awards Ceremony</li>
-                        <li>03:00 PM - Closing Remarks</li>
-                    </ul>
+                    <p class="text-gray-600">Venue: Conference Hall, University of Sharjah</p>
+                    <div class="details hidden mt-4">
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>09:00 AM - Hackathon Final Presentations</li>
+                            <li>12:00 PM - Keynote by Alain Chancé</li>
+                            <li>02:00 PM - Awards Ceremony</li>
+                            <li>03:00 PM - Closing Remarks</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,19 +259,19 @@
             <h2 class="text-3xl font-bold text-center mb-8">Featured Speakers</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="speaker-card bg-gray-50 p-6 rounded-lg text-center">
-                    <img src="assets/Sticker_Fall-fest-badge_Black.png" alt="Pawel Gora" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
+                    <img src="Sticker_Fall-fest-badge_Black.png" alt="Pawel Gora" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
                     <h3 class="text-xl font-semibold">Pawel Gora</h3>
                     <p class="text-gray-600 mb-2">University of Warsaw</p>
                     <p class="text-sm text-gray-500">Expert in quantum algorithms and their applications in machine learning</p>
                 </div>
                 <div class="speaker-card bg-gray-50 p-6 rounded-lg text-center">
-                    <img src="assets/Sticker_Fall-fest-badge_Black.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
+                    <img src="Sticker_Fall-fest-badge_Black.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
                     <h3 class="text-xl font-semibold">Alain Chancé</h3>
                     <p class="text-gray-600 mb-2">Founder CEO Alainquant LLC</p>
                     <p class="text-sm text-gray-500">Quantum entrepreneur with extensive experience in quantum computing startups</p>
                 </div>
                 <div class="speaker-card bg-gray-50 p-6 rounded-lg text-center">
-                    <img src="assets/Sticker_Fall-fest-badge_Black.png" alt="L Venkata Subramaniam" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
+                    <img src="Sticker_Fall-fest-badge_Black.png" alt="L Venkata Subramaniam" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
                     <h3 class="text-xl font-semibold">L Venkata Subramaniam</h3>
                     <p class="text-gray-600 mb-2">IBM Quantum India Leader</p>
                     <p class="text-sm text-gray-500">Leading IBM's quantum computing initiatives in India and surrounding regions</p>
@@ -281,9 +285,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12">Our Partners</h2>
             <div class="logo-container">
-                <img src="assets/UOS-LOGO-RGB.png" alt="University of Sharjah" class="logo-img">
-                <img src="assets/qiskit123.png" alt="IBM Qiskit" class="logo-img">
-                <img src="assets/Sticker_Fall-fest-badge_Black.png" alt="Qiskit Fall Fest" class="logo-img">
+                <img src="UOS-LOGO-RGB.png" alt="University of Sharjah" class="logo-img">
+                <img src="qiskit123.png" alt="IBM Qiskit" class="logo-img">
+                <img src="Sticker_Fall-fest-badge_Black.png" alt="Qiskit Fall Fest" class="logo-img">
             </div>
         </div>
     </section>
@@ -350,7 +354,7 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>© The Quantumplators 2023-25. All Rights Reserved.</p>
-            <img src="assets/Sticker_Fall-fest-badge_Black.png" alt="Quantum Accent" class="mt-4 mx-auto w-20 h-20 object-cover">
+            <img src="Sticker_Fall-fest-badge_Black.png" alt="Quantum Accent" class="mt-4 mx-auto w-20 h-20 object-cover">
         </div>
     </footer>
 
@@ -402,16 +406,6 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-        // Image error handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                if (!img.hasAttribute('onerror')) {
-                    img.setAttribute('onerror', "this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22' + this.width + '%22 height%3D%22' + this.height + '%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f3f4f6%22%2F%3E%3Ctext x%3D%2250%25%22 y%3D%2250%25%22 font-family%3D%22Arial%22 font-size%3D%2214%22 text-anchor%3D%22middle%22 dominant-baseline%3D%22middle%22%3EImage not found%3C%2Ftext%3E%3C%2Fsvg%3E'");
-                }
-            });
-        });
     </script>
 </body>
 </html>
