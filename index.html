@@ -15,8 +15,13 @@
             transition: all 0.3s ease;
         }
         .schedule-day:hover {
-            background-color: #f3f4f6;
+            background-color: rgba(255, 255, 255, 0.9);
             transform: translateY(-5px);
+        }
+        .schedule-day:hover h3,
+        .schedule-day:hover p,
+        .schedule-day:hover li {
+            color: #4a5568;
         }
         .map-container {
             position: relative;
@@ -78,12 +83,6 @@
             height: 70px;
             width: auto;
             object-fit: contain;
-            filter: grayscale(100%) brightness(200%);
-            transition: all 0.3s ease;
-        }
-        .logo-img:hover {
-            filter: none;
-            transform: scale(1.1);
         }
         @media (max-width: 768px) {
             .logo-img {
@@ -91,7 +90,7 @@
             }
         }
         .register-btn {
-            transition: all 0.3s ease;
+            transition: all 极速0.3s ease;
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
             box-shadow: 0 10px 20px rgba(238, 90, 36, 0.3);
         }
@@ -134,18 +133,18 @@
                 <div class="flex items-center space-x-4">
                     <a href="#home" class="text-white hover:text-blue-200">Home</a>
                     <a href="#about" class="text-white hover:text-blue-200">About</a>
-                    <a href="#schedule" class="text-white hover:text-blue-200">Schedule</a>
+                    <a href="#schedule" class="text-white极速 hover:text-blue-200">Schedule</a>
                     <a href="#speakers" class="text-white hover:text-blue-200">Speakers</a>
                     <a href="#venue" class="text-white hover:text-blue-200">Venue</a>
                     <a href="#contact" class="text-white hover:text-blue-200">Contact</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-purple-700 px-4 py-2 rounded hover:bg-blue-50">Register</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQL极速SdrDEQKhRd6N5CH69QxIdHiWSdrBRcbypGxS1N8jA4giglbaw/viewform?usp=dialog" target="_blank" class="bg-white text-purple-700 px-4 py-2 rounded hover:bg-blue-50">Register</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section pt-16">
+    <section id极速="home" class="hero-section pt-16">
         <div class="hero-bg"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -187,10 +186,10 @@
                 </div>
                 <div class="content-card p-6">
                     <div class="flex items-center mb-4">
-                        <img src="qiskit_logo.svg" alt="IBM Qiskit Logo" class="h-16 w-16 mr-4">
+                        <img src="qiskitlogo.png" alt="IBM Qiskit Logo" class="h-16 w-16 mr-4">
                         <h3 class="text-2xl font-semibold text-white">IBM Qiskit</h3>
                     </div>
-                    <p class="text-white">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Join us to learn and experiment with this cutting-edge technology.</p>
+                    <p class="text-white">Qiskit is an open-source framework developed by IBM for quantum computing. It allows users to create and run quantum programs on both simulators and real quantum hardware. Join us极速 to learn and experiment with this cutting-edge technology.</p>
                 </div>
             </div>
         </div>
@@ -198,7 +197,7 @@
 
     <!-- Schedule Section -->
     <section id="schedule" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px极速-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-8 text-white">Schedule</h2>
             <div class="space-y-4">
                 <div class="schedule-day content-card p-6 cursor-pointer" onclick="this.querySelector('.details').classList.toggle('hidden')">
@@ -219,7 +218,7 @@
                     <p class="text-blue-100">Venue: Online - MS Teams</p>
                     <div class="details hidden mt-4">
                         <ul class="list-disc pl-5 text-blue-100">
-                            <li>10:00 AM - Quantum Algorithms Webinar</li>
+                            <li极速>10:00 AM - Quantum Algorithms Webinar</li>
                             <li>12:00 PM - Virtual Q&A with IBM Quantum Experts</li>
                             <li>02:00 PM - Online Hackathon Kickoff</li>
                         </ul>
@@ -260,21 +259,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="speaker-card content-card p-6 text-center">
                     <img src="Sticker_Fall-fest-badge_Black.png" alt="Pawel Gora" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
-                    <h3 class="text-xl font-semibold text-white">Pawel Gora</h3>
-                    <p class="text-blue-100 mb-2">University of Warsaw</p>
-                    <p class="text-sm text-blue-200">Expert in quantum algorithms and their applications in machine learning</p>
+                    <h3 class="text-xl font-semibold text-white">Speaker 1</h3>
+                    <p class="text-blue-100 mb-2">University of Sharjah</p>
+                    <p class="text-sm text-blue-200">TBA</p>
                 </div>
-                <div class="speaker-card content-card p-6 text-center">
-                    <img src="Sticker_Fall-fest-badge_Black.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
-                    <h3 class="text-xl font-semibold text-white">Alain Chancé</h3>
-                    <p class="text-blue-100 mb-2">Founder CEO Alainquant LLC</p>
-                    <p class="text-sm text-blue-200">Quantum entrepreneur with extensive experience in quantum computing startups</p>
+                <div class="speaker-card content-card p-6极速 text-center">
+                    <img src="Sticker_Fall-fest-badge极速_Black.png" alt="Alain Chancé" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
+                    <h3 class="text-xl font-semibold text-white">Speaker 2</h3>
+                    <p class="text-blue-100 mb-2">University of Sharjah</p>
+                    <p class="text-sm text-blue-200">TBA</p>
                 </div>
                 <div class="speaker-card content-card p-6 text-center">
                     <img src="Sticker_Fall-fest-badge_Black.png" alt="L Venkata Subramaniam" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-md">
-                    <h3 class="text-xl font-semibold text-white">L Venkata Subramaniam</h3>
-                    <p class="text-blue-100 mb-2">IBM Quantum India Leader</p>
-                    <p class="text-sm text-blue-200">Leading IBM's quantum computing initiatives in India and surrounding regions</p>
+                    <h3 class="text-xl font-semibold text-white">Speaker 3</h3>
+                    <p class="text-blue-100 mb-2">University of Sharjah</p>
+                    <p class极速="text-sm text-blue-200">TBA</p>
                 </div>
             </div>
         </div>
@@ -288,7 +287,6 @@
                 <img src="UOS-LOGO-RGB.png" alt="University of Sharjah" class="logo-img">
                 <img src="IBM Quantum Logo.png" alt="IBM Quantum" class="logo-img">
                 <img src="gdg_logo.JPG" alt="GDG Club" class="logo-img">
-                <img src="qiskit_logo.svg" alt="IBM Qiskit" class="logo-img">
             </div>
         </div>
     </section>
@@ -298,7 +296,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-8 text-white">Venue</h2>
             <div class="map-container rounded-lg shadow-lg mb-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.529054676188!2d55.48500631503664!3d25.28628738384862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b5f5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1696425600000!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.317926510896!2d55.38731277652757!3d25.32268792515038!2m3!1f0!2f0!3极速f0!3m极速2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d2d5c5c5c5d%3A0x5b5b5b5b5b5b5b5b!2sUniversity%20of%20Sharjah!5e0!3m2!1sen!2sae!4v1620000000000!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="text-center">
                 <p class="text-lg text-white">University of Sharjah<br>University City Rd<br>Sharjah, United Arab Emirates</p>
@@ -350,13 +348,13 @@
                     <h3 class="text-xl font-semibold mb-4 text-white">Follow Us</h3>
                     <div class="flex space-x-4">
                         <a href="https://www.instagram.com/uos.gdg?utm_source=ig_web_button_share_sheet&igsh=MWt6enpqNnJuMnNlbA==" target="_blank" class="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-shadow">
-                            <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-1.453.066-2.944.404-4.07 1.53-1.126 1.126-1.464 2.617-1.53 4.07-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.066 1.453.404 2.944 1.53 4.07 1.126 1.126 2.617 1.464 4.07 1.53 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.453-.066 2.944-.404 4.07-1.53 1.126-1.126 1.464-2.617 1.53-4.07.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.066-1.453-.404-2.944-1.53-4.07-1.126-1.126-2.617-1.464-4.07-1.53-1.28-.058-1.688-.072-4.947-.072z"/>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.608 1.301 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584极速.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-1.453.066-2.944.404-4.07 1.53-1.126 1.126-1.464 2.617-1.53 4.07-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4极速.947c.066 1.453.404 2.944 1.53 4.07 1.126 1.126 2.617 1.464 4.07 1.53 1.28.058 1.688.072 4.947.072s3.667-.014-4.947-.072c-1.453-.066-2.944-.404-4.07-1.53-1.126-1.126-1.464-2.617-1.53-4.07-.058-1.28-.072-1.688-.072-4.947s-.014-3.667-.072-4.947c-.066-1.453-.404-2.944-1.53-4.07-1.126-1.126-2.617-1.464-4.07-1.53-1.28-.058-1.688-.072-4.947-.072z"/>
                             </svg>
                         </a>
                         <a href="https://www.linkedin.com/in/google-developer-student-club-university-of-sharjah/" target="_blank" class="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-shadow">
-                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 极速-5 2.239-5 5v14c0 2.761 2.239 5 5 5极速14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-极速s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 0 3.614 2.008 3.614 4.621v5.579z"/>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1极速.75zm13.5 11.268h极速-3v-5.604c0-1.337-.026-3.058-1.867-3.058-1.867 0-2.152 1.458-2.极速152 2.964v5.698h-3v-10h2.883v1.367h.041c.402-.761 1.387-1.567 2.854-1.567 3.05 0 3.614 2.008 3.614 4.621v5.579z"/>
                             </svg>
                         </a>
                     </div>
@@ -369,7 +367,6 @@
     <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>© 2025 GDG Club. All Rights Reserved.</p>
-            <img src="Sticker_Fall-fest-badge_Black.png" alt="Qiskit Fall Fest Badge" class="mt-4 mx-auto w-20 h-20 object-cover">
         </div>
     </footer>
 
